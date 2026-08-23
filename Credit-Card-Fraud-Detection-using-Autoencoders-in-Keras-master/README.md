@@ -1,13 +1,65 @@
-# Credit Card Fraud Detection using Autoencoders in Keras
+# Credit Card Fraud Detection Using Autoencoders
 
-Full explanation can be found in [this blog post](https://www.curiousily.com/posts/credit-card-fraud-detection-using-autoencoders-in-keras/). The source code is compatible with TensorFlow 1.1 and Keras 2.0.4
+## Overview
 
-### Hands-On Machine Learning from Scratch
+This project uses a **Deep Autoencoder** to detect fraudulent credit card transactions through anomaly detection. The model learns the patterns of legitimate transactions and identifies transactions with unusually high reconstruction error as potential fraud.
 
-Interested in deeper understanding of Machine Learning algorithms? Implement them in Python from scratch:
+## Dataset
 
-<a href="https://leanpub.com/hmls" target="_blank">
-  <img src="https://raw.githubusercontent.com/curiousily/Machine-Learning-from-Scratch/master/.github/book-cover.png" width="250">
-</a>
+The project uses the **Credit Card Fraud Detection dataset**:
 
-<a href="https://leanpub.com/hmls" target="_blank">Read the book here</a>
+* 284,807 total transactions
+* 284,315 legitimate transactions
+* 492 fraudulent transactions
+* 30 features
+* `Class = 0` → Legitimate
+* `Class = 1` → Fraud
+
+The dataset is highly imbalanced, making anomaly detection a useful approach.
+
+## Approach
+
+```text
+Dataset
+   ↓
+Data Preprocessing
+   ↓
+Train Autoencoder on Normal Transactions
+   ↓
+Reconstruct Transactions
+   ↓
+Calculate Reconstruction Error
+   ↓
+Apply Threshold
+   ↓
+Fraud / Normal
+```
+
+The autoencoder learns to reconstruct normal transactions accurately. Transactions with a reconstruction error above a selected threshold are classified as fraudulent.
+
+## Technologies
+
+* Python
+* TensorFlow / Keras
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
+* Seaborn
+
+## Evaluation
+
+The model is evaluated using:
+
+* Confusion Matrix
+* Precision
+* Recall
+* F1 Score
+* ROC-AUC
+* Precision-Recall Curve
+
+Precision and recall are particularly important because of the extreme class imbalance.
+
+## Purpose
+
+This project demonstrates how **autoencoders can be used for anomaly detection** in highly imbalanced fraud detection problems.
