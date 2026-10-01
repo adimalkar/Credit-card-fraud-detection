@@ -61,6 +61,28 @@ The model is evaluated using:
 Precision and recall are particularly important because of the extreme class imbalance.
 
 
+## Project Structure
+
+```text
+├── Credit-Card-Fraud-Detection-using-Autoencoders-in-Keras-master/
+│   ├── fraud_detection.ipynb   # Main Jupyter notebook with model training & analysis
+│   ├── model.h5                # Pre-trained Keras model weights
+│   ├── logs/                   # Training logs
+│   └── LICENSE                 # License file
+└── README.md                   # Project documentation
+```
+
+## Quick Start
+
+1. Install required dependencies:
+   ```bash
+   pip install tensorflow pandas numpy scikit-learn matplotlib seaborn jupyter
+   ```
+2. Launch the notebook:
+   ```bash
+   jupyter notebook Credit-Card-Fraud-Detection-using-Autoencoders-in-Keras-master/fraud_detection.ipynb
+   ```
+
 ## Purpose
 
 This project demonstrates how **autoencoders can be used for anomaly detection** in highly imbalanced fraud detection problems.
